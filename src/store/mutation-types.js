@@ -1,0 +1,3 @@
+// view
+export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR'
+// more...

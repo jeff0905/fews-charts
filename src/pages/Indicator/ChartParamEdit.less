@@ -1,0 +1,45 @@
+.chart-param {
+  width:100%;
+  height:100%;
+  .params {
+    position: relative;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    overflow: hidden;
+    padding-right: 4px;
+    // width: 50px;
+    .param {
+      display: block;
+      text-align: center;
+      height: 36px;
+      line-height: 36px;
+      cursor: pointer;
+      font-size: 12px;
+      margin: 5px 0;
+      margin-right: 2px;
+      padding-left: 2px;
+      -webkit-border-top-left-radius: 4px;
+      -moz-border-radius-topleft: 4px;
+      border-top-left-radius: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -moz-border-radius-bottomleft: 4px;
+      border-bottom-left-radius: 4px;
+
+      &-curr {
+        margin-right: 0;
+        padding-left: 0;
+        background: #5b5d6b;
+        -webkit-border-top-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        border-top-left-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      &-disabled {
+        display: none;
+      }
+    }
+  }
+}
