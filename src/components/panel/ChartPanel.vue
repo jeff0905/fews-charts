@@ -9,7 +9,7 @@
         <v-btn icon>
           <v-icon color='grey lighten-1'>date_range</v-icon>
         </v-btn>
-        <v-btn icon>
+        <v-btn icon @click="handleShowData()">
           <v-icon color='grey lighten-1'>apps</v-icon>
         </v-btn>
         <v-btn icon @click="handleBig()">
@@ -51,12 +51,18 @@ export default {
       this.$emit('drill')
       // window.open('about:blank', '_blank', 'width=400,height=240,menubar=no,toolbar=no, status=no,scrollbars=yes')
     },
+
+    // 放大..
     handleBig () {
       console.log('click big --> handleBig()')
       this.$emit('onBig')
       this.$refs.ichart.resize()
     },
 
+    // 显示数据
+    handleShowData () {
+      this.$emit('onShowData')
+    },
     // 钻取
     handleDrill () {
       this.$emit('drill')

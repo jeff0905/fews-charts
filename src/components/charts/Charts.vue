@@ -37,7 +37,7 @@ export default {
       console.log('watch option', this.chartInstance, val, oldVal)
       const newOption = Object.assign({}, val)
       if (this.chartInstance) {
-        this.chartInstance.setOption(newOption)
+        this.chartInstance.setOption(val, true)
         this.chartInstance.resize()
       } else {
         this.init()

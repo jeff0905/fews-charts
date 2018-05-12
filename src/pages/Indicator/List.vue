@@ -24,7 +24,7 @@
         <Charts :option="item" :theme="'light'" />
       </v-flex>
       <v-flex xs12 sm12 md6 lg6 xl4 class="indicator-item">
-        this is chart
+        <ChartPanel v-on:onShowData="showData()"/>
       </v-flex>
       <v-flex xs12 sm12 md6 lg6 xl4 class="indicator-item">
         this is chart
@@ -57,19 +57,28 @@
         this is chart
       </v-flex>
     </v-layout>
+
+     <v-dialog v-model="tableDialog" max-width="500px">
+       <HotTables root="hot-example" :rowHeaders="true" allowInsertRow />
+     </v-dialog>
   </v-container>
 </template>
 <script>
 import Charts from '@/components/charts/Charts'
+import HotTables from '@/components/Table/HotTables'
+import ChartPanel from '@/components/panel/ChartPanel'
 import ChartOption from '@/$base/utils/ChartOption'
 import OptionTemplate from '@/$base/utils/OptionTemplate'
 import Mock from '@/pages/BigPage/mockData'
 export default {
   name: 'IndicatorList',
   components: {
-    Charts
+    Charts,
+    ChartPanel,
+    HotTables
   },
   data: () => ({
+    tableDialog: false,
     list: []
   }),
   created: function () {
@@ -108,6 +117,9 @@ export default {
         .setGrid()
         .addSeries(data, 'line')
       return option
+    },
+    showData () {
+      this.tableDialog = !this.tableDialog
     }
   }
 }

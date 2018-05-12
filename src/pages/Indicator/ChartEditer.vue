@@ -1,7 +1,7 @@
 <template>
   <div class="chart-edit">
             <!-- 导航 -->
-        <v-flex d-inline-flex xs12 sm12 md12 xl12 lg12 elevation-2 style="width:100%;height:40px;">
+    <v-flex d-inline-flex xs12 sm12 md12 xl12 lg12 elevation-2 style="width:100%;height:40px;">
           <v-breadcrumbs divider="/">
             <v-breadcrumbs-item
               v-for="item in items"
@@ -11,10 +11,10 @@
               {{ item.text }}
             </v-breadcrumbs-item>
           </v-breadcrumbs>
-        </v-flex>
+    </v-flex>
 
             <!-- 查询区域 -->
-        <v-flex  my-2 xs12 sm12 md12 xl12 lg12 elevation-2 style="min-height:40px">
+    <v-flex  my-2 xs12 sm12 md12 xl12 lg12 elevation-2 style="min-height:40px">
           <v-layout row wrap align-content-start>
             <v-flex d-inline-flex xs12 sm12 md1 xl1 lg1 my-2 class="justify-content-end align-center" style="height:34px">
               <label >指标名称</label>
@@ -26,12 +26,18 @@
               <v-btn  color="primary">保存</v-btn>
               <v-btn >重置</v-btn>
             </v-flex>
-          </v-layout>
+      </v-layout>
 
-        </v-flex>
+    </v-flex>
     <v-container fill-height fluid pa-0>
-      <v-layout fill-height>
-        <v-flex xs4 md4 xl4 fill-height>
+      <v-layout column style="height:800px">
+        <v-flex dark pa-1 style="position:relative;height:300px">
+          <!-- <BackGrid style="position:absolute;top:0;left:0;right:0;bottom:0"/> -->
+          <!-- <Panel class="dragPanel" ref="dragPanel" :selected="true" style="width:550px;height:300px"> -->
+            <Charts slot="chart" ref="dragDemos" v-bind:option="selectedOption" />
+          <!-- </Panel> -->
+        </v-flex>
+        <v-flex style="height:500px">
           <v-tabs dark fill-height style="height:100%">
             <v-tabs-slider></v-tabs-slider>
             <v-tab>选择指标</v-tab>
@@ -54,12 +60,6 @@
               </v-tab-item>
             </v-tabs-items>
           </v-tabs>
-        </v-flex>
-        <v-flex xs8 md8 xl8 dark pa-4 style="position:relative">
-          <BackGrid style="position:absolute;top:0;left:0;right:0;bottom:0"/>
-          <Panel class="dragPanel" ref="dragPanel" :selected="true" style="width:550px;height:300px">
-            <Charts slot="chart" ref="dragDemos" v-bind:option="selectedOption" />
-          </Panel>
         </v-flex>
       </v-layout>
     </v-container>
@@ -87,7 +87,7 @@ import $ from 'jquery'
 require('jquery-ui/ui/widgets/draggable')
 
 export default {
-  name: "ChartEdit",
+  name: "ChartEditer",
   components: {
     LineChart,
     BarChart,

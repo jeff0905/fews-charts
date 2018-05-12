@@ -1,7 +1,7 @@
 <template>
  <v-container fluid grid-list-sm>
           <v-layout row wrap>
-            <v-flex xs3 v-for='chartIcon in chartIcons' class='icon-chart' :key='chartIcon.name' >
+            <v-flex xs3 xl1 md2 sm2 lg1 v-for='chartIcon in chartIcons' class='icon-chart' :key='chartIcon.name' >
               <div @click='emitOnSelect(chartIcon)' draggable ref='dragItem'>
                 <img :src='chartIcon.svg' alt=''>
                     <!-- <input type='checkbox' name='scatter'> -->
@@ -38,11 +38,13 @@ export default {
       },
       {
         svg: 'http://echarts.baidu.com/images/builder/chart/scatter.svg',
-        name: '散点图 '
+        name: '散点图 ',
+        type: 'scatter'
       },
       {
         svg: 'http://echarts.baidu.com/images/builder/chart/tree.svg',
-        name: '树图 '
+        name: '树图 ',
+        type: 'tree'
       },
       {
         svg: 'http://echarts.baidu.com/images/builder/chart/treemap.svg',
@@ -55,6 +57,16 @@ export default {
       {
         svg: 'http://echarts.baidu.com/images/builder/chart/lines.svg',
         name: '线图  '
+      },
+      {
+        svg: 'http://echarts.baidu.com/images/builder/chart/sankey.svg',
+        name: '桑吉图',
+        type: 'sankey'
+      },
+      {
+        svg: 'http://echarts.baidu.com/images/builder/chart/funnel.svg',
+        name: '漏斗图',
+        type: 'funnel'
       }
     ]
   }),

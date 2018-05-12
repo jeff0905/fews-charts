@@ -220,7 +220,7 @@ export default {
         isActive: true, // 默认active
         children: [
           {icon: 'list', text: '指标库列表', path: '/main/indicator', isActive: true}, // 默认active.
-          {icon: 'edit', text: '添加修改指标', path: '/main/indicator/chartEdit', isActive: false},
+          {icon: 'edit', text: '添加修改指标', path: '/main/indicator/chartEditer', isActive: false},
           {icon: 'content_copy', text: '数据源管理', path: '/main/DataSource', isActive: false}
         ]
       },

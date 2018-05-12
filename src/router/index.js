@@ -47,10 +47,10 @@ export default new Router({
               component: () => import(/* webpackChunkName: 'indicator' */ '@/pages/Indicator/List')
             },
             {
-              path: 'chartEdit',
+              path: 'chartEditer',
               icon: 'compose',
               title: '新增或修改指标',
-              component: () => import(/* webpackChunkName: 'indicator' */ '@/pages/Indicator/ChartEdit')
+              component: () => import(/* webpackChunkName: 'indicator' */ '@/pages/Indicator/ChartEditer')
             }
           ]
         },
